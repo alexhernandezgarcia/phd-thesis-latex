@@ -1,0 +1,27 @@
+.*.sw*
+# Latex
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.sync*
+# PDFs
+main-digital.pdf
+main-print.pdf
+# Personal
+todo.md
+alex_*
+includes/foreword/twitter/
+notebooks/
+latex-templates/
+old-versions/
+playground/
+admin/
+misc/
+# Higher resolution images
+includes/*/src/
+includes/*/img-hd/

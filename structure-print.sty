@@ -1,0 +1,204 @@
+% Coding
+\usepackage[utf8]{inputenc}
+
+% British and Spanish
+\usepackage[spanish,british]{babel}
+
+% Fonts
+% See: https://tex.stackexchange.com/questions/338049/how-do-fonts-work-in-latex
+% See: https://tex.stackexchange.com/questions/202789/where-to-find-the-family-code-for-a-custom-font
+% See: https://en.wikibooks.org/wiki/LaTeX/Fonts#Using_TTF_and_OTF_fonts
+\renewcommand{\familydefault}{upl} % Default family (upl: Palatino)
+% \renewcommand{\familydefault}{LinuxBiolinumT-LF} % Default Biolinum (Sans Serif) <--- works in Overleaf (try texlive 2020?)
+
+% Graphics 
+\usepackage{graphicx}
+
+% Modification to natbib citations (adapted from ICLR style)
+\RequirePackage{natbib}
+\setcitestyle{authoryear,round,citesep={;},aysep={,},yysep={;}}
+
+% Space between paragraphs
+\usepackage{parskip}
+\setlength{\parindent}{15pt}
+
+% Tables	
+\usepackage{multirow}
+\usepackage{makecell} % Break line within table cells
+
+% Algorithms
+\usepackage{algorithm2e}
+
+% Subfigures
+\usepackage{subcaption} % Subfigures
+
+% URL in bibliography
+\usepackage{url}
+
+% Hyper-references
+\usepackage[hidelinks]{hyperref}
+
+% Euro symbol
+\usepackage[official]{eurosym}
+
+% Fonts and mathematical elements
+\usepackage{amsmath}
+\usepackage{amssymb} 
+% \usepackage{pslatex} % Nicer maths
+\usepackage{bbm} % Indicator function
+\usepackage{textcomp} % degrees symbol 
+\usepackage{color} 
+\usepackage{xcolor} % Color text
+\usepackage{xfrac}
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+
+% For better formatting of matrices
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+% argmin with subscript below argmin, not below min
+\usepackage{amsmath}
+\newcommand{\argmin}{\operatornamewithlimits{arg\ min}}
+
+% Margins
+% \usepackage[top=3cm,bottom=3.5cm,left=3.50cm,right=2.40cm]{geometry} % Print
+\usepackage[top=3cm,bottom=3cm,left=3.3cm,right=2.7cm]{geometry} % PDF
+
+% Titles font
+\usepackage{sectsty}
+% \allsectionsfont{\usefont{T1}{qag}{b}{n}\selectfont} % Sans Serif
+% \allsectionsfont{\usefont{T1}{qpl}{b}{n}\selectfont}
+% \allsectionsfont{\usefont{T1}{unc}{b}{n}\selectfont}
+\allsectionsfont{\usefont{T1}{upl}{b}{n}\selectfont} % Palatino
+% \allsectionsfont{\usefont{T1}{qtm}{b}{n}\selectfont}
+
+% Code Fonts
+\usepackage{listings}
+
+% Lorem ipsum
+\usepackage{blindtext} 
+
+% Blocks of comments
+\usepackage{comment}
+
+% Appendices
+\usepackage{appendix}
+
+% Append pdf
+\usepackage{pdfpages} 
+
+% HEADERS
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhf{}
+\fancyhead[LE]{\small \leftmark} % Chapter name at even pages, left side of header
+\fancyhead[RO]{\small \rightmark} % Section name at odd pages, right side of header
+\fancyfoot[RO,LE]{\small \thepage} % Page numbers in footer corners
+
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter. #1}{}} % Chapter format: Chapter X. Name
+\renewcommand{\sectionmark}[1]{\markright{\thesection. #1}} % Section format: N.M. Name
+\renewcommand{\headrulewidth}{0pt} 
+
+% Blank pages without header
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[LE,RO]{\textbf{\thepage}}
+}
+
+% CHAPTERS
+\usepackage{chapterbib} % Separate bibliography for each chapter
+\usepackage{titlesec}
+\titleformat{\chapter}[display] % New format for chapters
+{\usefont{T1}{upl}{b}{n}} % Font of chapter name
+% {\usefont{T1}{qtm}{b}{n}} % Font type
+{\filcenter \huge \usefont{T1}{upl}{m}{it} Chapter \thechapter} % Font of "Chapter X"
+% {\filcenter \huge \usefont{T1}{upl}{m}{sc} Chapter \thechapter} % Font of "Chapter X" (capital)
+% {\filcenter \huge \usefont{T1}{qtm}{m}{n} Chapter \thechapter} % Chapter number size: \Large
+{0mm} % Minimum gap between title and body
+{\titlerule \vspace{5mm} \filcenter \Huge} % Right-aligned body
+[\vspace{7mm}] % After the body, set a gap and a thick horizontal line
+
+% Blank pages without titles and headers
+\makeatletter
+  \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+  \vspace*{\fill}
+    \thispagestyle{empty}
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+% Bibliography double column and smaller font
+%% See: https://tex.stackexchange.com/a/440376/212008
+\usepackage{multicol}
+\renewcommand{\bibpreamble}{\begin{multicols}{2}}
+\renewcommand{\bibpostamble}{\end{multicols}}
+\renewcommand*{\bibfont}{\footnotesize}
+% Bibliography
+% See: https://www.overleaf.com/learn/latex/Commands
+\newcommand{\chapterbibliography}{%
+\clearpage
+\addcontentsline{toc}{section}{Bibliography}
+\bibliographystyle{bibliography}
+\bibliography{references}
+}
+
+% Block with margin
+% See: https://tex.stackexchange.com/questions/588/how-can-i-change-the-margins-for-only-part-of-the-text
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+% Contributors of chapter
+% See: https://tex.stackexchange.com/questions/34844/when-is-it-harmful-to-add-percent-character-at-end-of-lines-in-a-newcommand-or
+% See: https://en.wikibooks.org/wiki/LaTeX/Macros#New_environments
+% See: https://www.overleaf.com/learn/latex/Environments
+% See: https://tex.stackexchange.com/questions/59136/chapter-title-and-abstract-in-the-same-page/137309
+\makeatletter
+\newenvironment{contributors}%
+	{\noindent\ignorespaces%
+	\begin{changemargin}{1cm}{1cm}%
+	\normalsize \textbf{Contributors}%
+	\par\footnotesize}%
+	%
+	{\end{changemargin}%
+	\par\noindent%
+	\ignorespacesafterend}
+\makeatother
+
+% Outreach
+\makeatletter
+\newenvironment{outreach}%
+	{\noindent\ignorespaces%
+	\begin{changemargin}{1cm}{1cm}%
+	\normalsize \textbf{Outreach}%
+	\par\footnotesize%
+	This chapter extends the following publications:
+	\begin{itemize}}%
+	%
+	{\end{itemize}%
+    \begin{center}%
+	\rule{\linewidth}{0.1mm} \\ % Horizontal Line
+	\vspace{0.5cm}
+    \end{center}%
+	\end{changemargin}%
+	\par\noindent%
+	\ignorespacesafterend}
+\makeatother
+
+% Images path
+\newcommand{\chapterpath}{includes}
+\newcommand{\imgpath}{\chapterpath/img-hd}
+
+% Change bullet of itemize
+%\renewcommand{\item}{\item[]}
+%\newcommand{\labelitemi}{$\blacksquare$}
+

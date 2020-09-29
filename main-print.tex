@@ -1,0 +1,78 @@
+\documentclass[a4paper,10pt,twoside,openright]{book}
+
+% Style file
+\usepackage{structure-print}
+
+% Include chapters and other sections: the lines corresponding to different chapters can be commented out during
+% the process of writing to speed up the compilation time.
+\includeonly{
+    includes/foreword/foreword, 
+    includes/abstract/abstract, 
+    includes/intro/intro, 
+    includes/background/background,
+    includes/regularisation/regularisation,
+    includes/daug-reg/daug-reg,
+    includes/daug-it/daug-it,
+    includes/invariance/invariance,
+    includes/global-salience/global-salience,
+    includes/image-id/image-id,
+    includes/discussion/discussion,
+}
+
+\begin{document}
+
+% Start with Roman numbering
+\pagenumbering{roman}
+
+%%% COVER %%%
+\includepdf[pages=-]{includes/cover/cover}
+\cleardoublepage
+\input{includes/cover/frontmatter-print}
+
+%%% FOREWORD %%%
+\include{includes/foreword/foreword}
+\cleardoublepage
+
+%%% ABSTRACT %%%
+\include{includes/abstract/abstract}
+\cleardoublepage
+
+% Table of contents
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+
+% Arabic numbers from the start of the main includes
+\cleardoublepage
+\pagenumbering{arabic}
+
+%%% CHAPTER 1: INTRODUCTION %%%
+\include{includes/intro/intro}
+
+%%% CHAPTER 2: BACKGROUND %%%
+\include{includes/background/background}
+
+%%% CHAPTER 3: REGULARISATION %%%
+\include{includes/regularisation/regularisation}
+
+%%% CHAPTER 4: DATA AUGMENTATION INSTEAD OF REGULARISATION %%%
+\include{includes/daug-reg/daug-reg}
+
+%%% CHAPTER 5: DATA AUGMENTATION AND IT CORTEX %%%
+\include{includes/daug-it/daug-it}
+
+%%% CHAPTER 6: INVARIANCE %%%
+\include{includes/invariance/invariance}
+
+%%% CHAPTER 7: GLOBAL SALIENCE %%%
+\include{includes/global-salience/global-salience}
+
+%%% CHAPTER 8: IMAGE IDENTIFICATION %%%
+\include{includes/image-id/image-id}
+
+%%% CHAPTER 9 GENERAL DISCUSSION %%%
+\include{includes/discussion/discussion}
+
+%%% LAST PAGE %%%
+\includepdf[pages=last]{includes/lastpage/lastpage}
+
+\end{document}          
