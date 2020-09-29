@@ -1,6 +1,6 @@
 # PhD thesis in LaTeX
 
-This repository contains the source files of my PhD thesis, [Data augmentation and image understanding](alexhernandezgarcia.github.io/thesis.pdf), written in LaTeX. I'm sharing it with a [CC BY-NC-SA 4.0 License](#license), so feel free to clone the repository and adapt it for your own thesis or any other document. You are also welcome to get in touch if you have any questions!
+This repository contains the source files of my PhD thesis, [Data augmentation and image understanding](https://alexhernandezgarcia.github.io/thesis.pdf), written in LaTeX. I'm sharing it with a [CC BY-NC-SA 4.0 License](#license), so feel free to clone the repository and adapt it for your own thesis or any other document. You are also welcome to get in touch if you have any questions!
 
 ## Citation
 
