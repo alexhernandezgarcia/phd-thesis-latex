@@ -66,7 +66,7 @@ For this project, I defined two versions:
 In order to define these two documents, there are essentially three things to take into account in this project:
 
 1. Separate style files: [`structure-print.sty`](./structure-print.sty) and [`structure-digital.sty`](./structure-digital.sty)
-2. Separate main files: [`main-print.sty`](./main-print.sty) and [`main-digital.sty`](./main-digital.sty)
+2. Separate main files: [`main-print.tex`](./main-print.tex) and [`main-digital.tex`](./main-digital.tex)
 3. Separate image directories: `./includes/<subfolder>/img/` and `./includes/<subfolder>/img-hd/`. Note that `img-hd` directories are not pushed to GitHub ([see below](#how-to-compile))
 
 ### How to compile
@@ -80,14 +80,14 @@ Second, you can clone this repository into your local machine:
 git clone https://github.com/alexhernandezgarcia/phd-thesis-latex.git
 ```
 
-At this point, if all the LaTeX packages are installed, it should be possible to compile [`main-digital.sty`](./main-digital.sty) without errors.
+At this point, if all the LaTeX packages are installed, it should be possible to compile [`main-digital.tex`](./main-digital.tex) without errors.
 
-In order to compile [`main-print.sty`](./main-print.sty), you have to take an additional step because it will try to use images stored in `./includes/<subfolder>/img-hd/`, but this directories are not uploaded to GitHub in order to spare storage space. You can simply create dummy `img-hd` directories by copying the `./includes/<subfolder>/img/` directories, with the following in the command line:o
+In order to compile [`main-print.tex`](./main-print.tex), you have to take an additional step because it will try to use images stored in `./includes/<subfolder>/img-hd/`, but this directories are not uploaded to GitHub in order to spare storage space. You can simply create dummy `img-hd` directories by copying the `./includes/<subfolder>/img/` directories, with the following in the command line:o
 ```
 for dir in $(ls -d includes/*/img/); do cp -r $dir $(echo $dir | sed -e "s/img/img-hd/g"); done
 ```
 
-After this, it should be possible to also compile [`main-print.sty`](./main-print.sty) (though with standard resolution images, of course).
+After this, it should be possible to also compile [`main-print.tex`](./main-print.tex) (though with standard resolution images, of course).
 
 Please get in touch if you want some help!
 
