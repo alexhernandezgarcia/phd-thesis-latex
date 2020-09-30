@@ -10,6 +10,7 @@ This LaTex document is built in a [modular](https://en.wikibooks.org/wiki/LaTeX/
 
 This project has the following structure concept:
 
+```bash
 .
 ├── includes
 │   ├── prologue
@@ -30,6 +31,7 @@ This project has the following structure concept:
 ├── structure.sty
 ├── references.bib
 └── bibliography.bst
+```
 
 * `main.tex` is the main `.tex` file of the project: it is the file that is compiled and that defines the overall structure of the document. It incorporates the rest of the files through `\input{}` and `\include{}` commands. 
 * `structure.sty` defines the style of the document, for example through `\usepackage{}` commands.
@@ -63,13 +65,13 @@ For this project, I defined two versions:
 
 In order to define these two documents, there are essentially three things to take into account in this project:
 
-1. Separate style files: [`structure-print.sty`](structure-print.sty) and [`structure-digital.sty`](structure-digital.sty)
-2. Separate main files: [`main-print.sty`](main-print.sty) and [`main-digital.sty`](main-digital.sty)
-3. Separate image directories: `./includes/<subfolder>/img/` and `./includes/<subfolder>/img-hd/`. Note that `img-hd` directories are not pushed to GitHub ([see below](###how-to-compile)
+1. Separate style files: [`structure-print.sty`](./structure-print.sty) and [`structure-digital.sty`](./structure-digital.sty)
+2. Separate main files: [`main-print.sty`](./main-print.sty) and [`main-digital.sty`](./main-digital.sty)
+3. Separate image directories: `./includes/<subfolder>/img/` and `./includes/<subfolder>/img-hd/`. Note that `img-hd` directories are not pushed to GitHub ([see below](#how-to-compile))
 
 ### How to compile
 
-First, you will need a working LaTeX installation in order to compile the project and create a PDF. Let's face it, installing LaTeX can be painful experience. I attempted to mitigate this pain for others (and my future self) with a [brief guide on how to get LaTeX working on Linux](https://github.com/alexhernandezgarcia/linux-config-utils/blob/master/latex/latex.md). Depending on your installation, you may have to install some additional packages and fonts (for example `upl` Palatino). You may take a look at [`structure-print.sty`](structure-print.sty) and [`structure-digital.sty`](structure-digital.sty) to see the packages used or simply install them as the compiler complains.
+First, you will need a working LaTeX installation in order to compile the project and create a PDF. Let's face it, installing LaTeX can be painful experience. I attempted to mitigate this pain for others (and my future self) with a [brief guide on how to get LaTeX working on Linux](https://github.com/alexhernandezgarcia/linux-config-utils/blob/master/latex/latex.md). Depending on your installation, you may have to install some additional packages and fonts (for example `upl` Palatino). You may take a look at [`structure-print.sty`](./structure-print.sty) and [`structure-digital.sty`](./structure-digital.sty) to see the packages used or simply install them as the compiler complains.
 
 Alternatively, you may use an online LaTeX editors, such as [Overleaf](https://www.overleaf.com/).
 
@@ -78,14 +80,14 @@ Second, you can clone this repository into your local machine:
 git clone https://github.com/alexhernandezgarcia/phd-thesis-latex.git
 ```
 
-At this point, if all the LaTeX packages are installed, it should be possible to compile [`main-digital.sty`](main-digital.sty) without errors.
+At this point, if all the LaTeX packages are installed, it should be possible to compile [`main-digital.sty`](./main-digital.sty) without errors.
 
-In order to compile [`main-print.sty`](main-print.sty), you have to take an additional step because it will try to use images stored in `./includes/<subfolder>/img-hd/`, but this directories are not uploaded to GitHub in order to spare storage space. You can simply create dummy `img-hd` directories by copying the `./includes/<subfolder>/img/` directories, with the following in the command line:o
+In order to compile [`main-print.sty`](./main-print.sty), you have to take an additional step because it will try to use images stored in `./includes/<subfolder>/img-hd/`, but this directories are not uploaded to GitHub in order to spare storage space. You can simply create dummy `img-hd` directories by copying the `./includes/<subfolder>/img/` directories, with the following in the command line:o
 ```
 for dir in $(ls -d includes/*/img/); do cp -r $dir $(echo $dir | sed -e "s/img/img-hd/g"); done
 ```
 
-After this, it should be possible to also compile [`main-print.sty`](main-print.sty) (though with standard resolution images, of course).
+After this, it should be possible to also compile [`main-print.sty`](./main-print.sty) (though with standard resolution images, of course).
 
 Please get in touch if you want some help!
 
