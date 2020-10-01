@@ -1,4 +1,4 @@
-# PhD thesis in LaTeX [[PDF]](https://alexhernandezgarcia.github.io/thesis.pdf)
+# PhD thesis in LaTeX  - [PDF](https://alexhernandezgarcia.github.io/thesis.pdf)
 
 This repository contains the source files of my PhD thesis, [Data augmentation and image understanding](https://alexhernandezgarcia.github.io/thesis.pdf), written in LaTeX. I'm sharing it with a [CC BY-NC-SA 4.0 License](#license), so feel free to clone the repository and use it as a template for your own thesis or any other document. You are also welcome to get in touch if you have any questions!
 
