@@ -1,4 +1,4 @@
-# PhD thesis in LaTeX
+# PhD thesis in LaTeX [[PDF]](https://alexhernandezgarcia.github.io/thesis.pdf)
 
 This repository contains the source files of my PhD thesis, [Data augmentation and image understanding](https://alexhernandezgarcia.github.io/thesis.pdf), written in LaTeX. I'm sharing it with a [CC BY-NC-SA 4.0 License](#license), so feel free to clone the repository and use it as a template for your own thesis or any other document. You are also welcome to get in touch if you have any questions!
 
@@ -80,7 +80,7 @@ Second, you can clone this repository into your local machine:
 git clone https://github.com/alexhernandezgarcia/phd-thesis-latex.git
 ```
 
-At this point, if all the LaTeX packages are installed, it should be possible to compile [`main-digital.tex`](./main-digital.tex) without errors.
+At this point, if all the LaTeX packages are installed, it should be possible to compile [`main-digital.tex`](./main-digital.tex) without errors. If you generate a PDF, it should look like [this one](https://alexhernandezgarcia.github.io/thesis.pdf).
 
 In order to compile [`main-print.tex`](./main-print.tex), you have to take an additional step because it will try to use images stored in `./includes/<subfolder>/img-hd/`, but this directories are not uploaded to GitHub in order to spare storage space. You can simply create dummy `img-hd` directories by copying the `./includes/<subfolder>/img/` directories, with the following in the command line:o
 ```
